@@ -1,0 +1,35 @@
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <b>Employees</b>
+        </div>
+        <div class="card-body shadow">
+            <table class="table">
+                <thead>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Salary</th>
+                    <th>Action</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let emp of employees; let i = index">
+                        <td>{{ i + 1}}</td>
+                        <td>{{ emp.name }}</td>
+                        <td>{{ emp.email }}</td>
+                        <td>{{ emp.salary }}</td>
+                    
+                        <td>
+                            <div class="btn-group">
+                                <button class="btn btn-primary btn-sm mr-2" routerLink="edit/{{ emp._id }}" >Update</button>
+                                <button class="btn btn-danger btn-sm" (click)="deleteData(emp._id)">Delete</button>
+                            </div>
+                          
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

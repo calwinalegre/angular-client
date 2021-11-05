@@ -1,0 +1,32 @@
+<div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h6>Add Employee</h6>
+        </div>
+        <div class="card-body">
+            <form (ngSubmit)="updateData()" [formGroup]="form">
+                <div class="form-group mb-4">
+                    <label for="">Name</label>
+                    <input type="text"  formControlName="name" class="form-control" placeholder="Enter name">
+                               
+                   
+                </div>
+                <div class="form-group my-4">
+                    <label for="">Email</label>
+                    <input type="email" formControlName="email"  class="form-control" placeholder="Enter email">
+                </div>
+                <div class="form-group my-4">
+                    <label for="">Salary</label>
+                    <input type="text"  formControlName="salary" class="form-control" placeholder="Enter salary">
+               
+                   
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary">Save</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+  
+</div>

@@ -1,0 +1,48 @@
+<div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h6>Add Employee</h6>
+        </div>
+        <div class="card-body">
+            <form (ngSubmit)="insertData()" [formGroup]="form">
+                <div class="form-group mb-4">
+                    <label for="">Name</label>
+                    <input type="text" formControlName="name" [ngClass]="{ 'is-invalid' : submitted && f.name.errors }" class="form-control" placeholder="Enter name">
+
+                    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                        <div *ngIf="f.name.errors.required" >
+                            Name is required
+                        </div>
+                    </div>
+                    
+                   
+                </div>
+                <div class="form-group my-4">
+                    <label for="">Email</label>
+                    <input type="email" formControlName="email" [ngClass]="{ 'is-invalid' : submitted && f.email.errors }" class="form-control" placeholder="Enter email">
+
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required" >
+                            Email is required
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group my-4">
+                    <label for="">Salary</label>
+                    <input type="text" formControlName="salary"  [ngClass]="{ 'is-invalid' : submitted && f.salary.errors }" class="form-control" placeholder="Enter salary">
+               
+                    <div *ngIf="submitted && f.salary.errors" class="invalid-feedback">
+                        <div *ngIf="f.salary.errors.required" >
+                            Salary is required
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary">Submit</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+  
+</div>
