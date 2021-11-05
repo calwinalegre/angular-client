@@ -46,8 +46,9 @@ export class EditEmployeeComponent implements OnInit {
       this.employeeService.updateData(this.id, this.form.value)
       .subscribe( res => {
         this.data = res;
+        this.router.navigateByUrl('/');
       })
-      this.router.navigateByUrl('/');
+      
   }
 
 }

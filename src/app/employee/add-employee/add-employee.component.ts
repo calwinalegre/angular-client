@@ -13,6 +13,7 @@ export class AddEmployeeComponent implements OnInit {
   form!:FormGroup;
   submitted: boolean = false;
   data:any; 
+  employees: any;
   constructor(private employeeService:EmployeeService, private formBuilder: FormBuilder, private router: Router) {
 
    }
@@ -34,6 +35,13 @@ export class AddEmployeeComponent implements OnInit {
     return this.form.controls;
   }
 
+
+  /* getEmployeesData(){
+    this.employeeService.getData().subscribe( res => {
+      this.employees = res;
+    });
+  } */
+
   insertData(){
       this.submitted = true;
 
@@ -43,9 +51,10 @@ export class AddEmployeeComponent implements OnInit {
 
       this.employeeService.insertData(this.form.value).subscribe( res => {
         this.data = res;
+        this.router.navigateByUrl('/');
       });
 
-      this.router.navigateByUrl('/');
+ 
       
   };
 
