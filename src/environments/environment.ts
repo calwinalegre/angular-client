@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://api-mean-stack.herokuapp.com/'
+  apiUrl: 'https://api-mean-stack.herokuapp.com'
 };
 
 /*

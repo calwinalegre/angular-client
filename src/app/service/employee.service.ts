@@ -12,23 +12,23 @@ export class EmployeeService {
    }
 
    getData(){
-     return this.httpClient.get(environment.apiUrl + '/api/employees');
+     return this.httpClient.get('https://api-mean-stack.herokuapp.com/api/employees');
    }
 
    insertData(data:any){
-    return this.httpClient.post(environment.apiUrl + '/api/employee/add', data);
+    return this.httpClient.post('https://api-mean-stack.herokuapp.com/api/employee/add', data);
    }
 
    getDataById(id:any){
-    return this.httpClient.get(environment.apiUrl + '/api/employee/' + id);
+    return this.httpClient.get('https://api-mean-stack.herokuapp.com/api/employee/' + id);
    }
 
    updateData(id:any, data:any){
-    return this.httpClient.put(environment.apiUrl + '/api/employee/edit/' + id, data);
+    return this.httpClient.put('https://api-mean-stack.herokuapp.com/api/employee/edit/' + id, data);
    }
 
    deleteData(id:any){
-    return this.httpClient.delete(environment.apiUrl + '/api/employee/' + id);
+    return this.httpClient.delete('https://api-mean-stack.herokuapp.com/api/employee/' + id);
    }
    
 }
